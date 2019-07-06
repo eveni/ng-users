@@ -1,0 +1,16 @@
+<div>
+  <div *ngIf="thisUser">
+    <h3>Hey there {{thisUser.username}}</h3>
+    <p>user list:</p>
+    <ul>
+      <li *ngFor="let u of users">
+        email: {{u.email}} | username: {{u.username}}
+      </li>
+    </ul>
+    <button (click)="logout()">LogOut</button>
+  </div>
+  <div *ngIf="!thisUser">
+    <h3>You're not logged in yet please log in</h3>
+    <a routerLink="/new">Login</a>
+  </div>
+</div>
